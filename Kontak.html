@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontak - BusanaElegan</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand-row" href="Beranda.html">
+      <img src="logo.jpg" class="logo-svg" alt="logo">
+      <span class="brand-text">BusanaElegan</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="Beranda.html">Beranda</a>
+      <a href="Produk.html">Produk</a>
+      <a href="Tentang.html">Tentang Kami</a>
+      <a href="Kontak.html" class="active">Kontak</a>
+    </nav>
+
+    <div><button onclick="logout()" class="btn small ghost">Logout</button></div>
+  </header>
+
+  <main class="page container">
+    <h2>Hubungi Kami</h2>
+    <p class="muted">Kirim pertanyaan, saran, atau keluhan. (Demo: disimpan di browser)</p>
+
+    <form id="contactForm" onsubmit="return kirimPesan(event)" class="card glass">
+      <input type="text" id="nama" placeholder="Nama lengkap" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="judul" placeholder="Judul pesan" required>
+      <textarea id="pesan" rows="6" placeholder="Tulis pesan..." required></textarea>
+      <div style="display:flex;gap:12px;justify-content:flex-end;">
+        <button class="btn ghost" type="reset">Reset</button>
+        <button class="btn primary" type="submit">Kirim Pesan</button>
+      </div>
+    </form>
+
+    <section class="card glass">
+      <h3>Pesan Terkirim (demo)</h3>
+      <div id="inboxArea"><p class="muted">Belum ada pesan.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2025 BusanaElegan</p></div>
+  </footer>
+
+  <script src="Script.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', loadInbox);</script>
+</body>
+</html>

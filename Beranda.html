@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beranda - BusanaElegan</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand-row" href="Beranda.html">
+      <img src="logo.jpg" class="logo-svg" alt="logo">
+      <span class="brand-text">BusanaElegan</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="Beranda.html" class="active">Beranda</a>
+      <a href="Produk.html">Produk</a>
+      <a href="Tentang.html">Tentang Kami</a>
+      <a href="Kontak.html">Kontak</a>
+    </nav>
+
+    <div>
+      <button onclick="logout()" class="btn small ghost">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Carousel / Slider -->
+    <section class="hero-carousel">
+      <div id="carousel" class="carousel">
+        <div class="slide" style="background-image:url('merah.jpg');">
+          <div class="slide-content">
+            <h1>Keanggunan yang Tak Lekang Waktu</h1>
+            <p>Koleksi resmi & busana pesta dengan bahan premium</p>
+            <a href="Produk.html" class="btn">Lihat Koleksi</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image:url('b.jpg');">
+          <div class="slide-content">
+            <h1>Motif Batik Modern</h1>
+            <p>Kolaborasi motif tradisional & desain kontemporer</p>
+            <a href="Produk.html" class="btn">Produk Batik</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image:url('c.jpg');">
+          <div class="slide-content">
+            <h1>Casual & Nyaman</h1>
+            <p>Koleksi sehari-hari yang nyaman dan stylish</p>
+            <a href="Produk.html" class="btn">Casual</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image:url('p.jpg');">
+          <div class="slide-content">
+            <h1>Formal & Profesional</h1>
+            <p>Pilihan outfit formal untuk momen penting</p>
+            <a href="Produk.html" class="btn">Formal</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button onclick="prevSlide()" aria-label="prev">&#10094;</button>
+        <div id="dots" class="dots"></div>
+        <button onclick="nextSlide()" aria-label="next">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="about-brief container">
+      <h2>Tentang BusanaElegan</h2>
+      <p class="lead">
+        BusanaElegan menghadirkan koleksi pakaian berkualitas yang memadukan estetika tradisi dan gaya modern.
+        Filosofi kami: <strong>keanggunan, kenyamanan, dan kualitas</strong>.
+      </p>
+
+      <div class="grid-3">
+        <div class="card glass small">
+          <h3>Visi</h3>
+          <p>Menjadi brand busana pilihan yang mempromosikan kepercayaan diri melalui pakaian berkualitas.</p>
+        </div>
+
+        <div class="card glass small">
+          <h3>Misi</h3>
+          <ul>
+            <li>Menyajikan desain elegan & nyaman</li>
+            <li>Menggunakan bahan berkualitas</li>
+            <li>Melayani pelanggan dengan hangat</li>
+          </ul>
+        </div>
+
+        <div class="card glass small">
+          <h3>Target</h3>
+          <p>Usia 20-40 tahun yang mencari tampilan elegan & modern.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 BusanaElegan — Semua hak dilindungi</p>
+    </div>
+  </footer>
+
+  <script src="Script.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=> initCarousel('carousel',4000));</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produk - BusanaElegan</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand-row" href="Beranda.html">
+      <img src="logo.jpg" class="logo-svg" alt="logo">
+      <span class="brand-text">BusanaElegan</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="Beranda.html">Beranda</a>
+      <a href="Produk.html" class="active">Produk</a>
+      <a href="Tentang.html">Tentang Kami</a>
+      <a href="Kontak.html">Kontak</a>
+    </nav>
+
+    <div>
+      <button onclick="logout()" class="btn small ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="page container">
+    <h2>Katalog Produk</h2>
+    <p class="muted">Klik produk untuk melihat detail.</p>
+
+    <div class="produk-grid">
+      <div class="produk-card" onclick="openProductModal(1)">
+        <img src="merah.jpg" alt="Gaun Merah">
+        <div class="produk-body">
+          <h3>Gaun Merah Elegan</h3>
+          <p class="price">Rp 480.000</p>
+        </div>
+      </div>
+
+      <div class="produk-card" onclick="openProductModal(2)">
+        <img src="dres putih.jpg" alt="Dress Putih">
+        <div class="produk-body">
+          <h3>Dress Putih Pesta</h3>
+          <p class="price">Rp 520.000</p>
+        </div>
+      </div>
+
+      <div class="produk-card" onclick="openProductModal(3)">
+        <img src="img/batik.jpg" alt="Batik Modern">
+        <div class="produk-body">
+          <h3>Batik Modern</h3>
+          <p class="price">Rp 290.000</p>
+        </div>
+      </div>
+
+      <div class="produk-card" onclick="openProductModal(4)">
+        <img src="kemeja.jpg" alt="Kemeja">
+        <div class="produk-body">
+          <h3>Kemeja Stylish</h3>
+          <p class="price">Rp 210.000</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 BusanaElegan</p>
+    </div>
+  </footer>
+
+  <script src="Script.js"></script>
+  <script>
+    const PRODUCTS = {
+      1: {title: 'Gaun Merah Elegan', price:'Rp 480.000', img:'img/merah.jpg', desc: 'Gaun bahan premium, potongan A-line, cocok untuk pesta.'},
+      2: {title: 'Dress Putih Pesta', price:'Rp 520.000', img:'img/dres putih.jpg', desc: 'Dress elegan berhiaskan detail renda.'},
+      3: {title: 'Batik Modern', price:'Rp 290.000', img:'img/batik.jpg', desc: 'Batik motif kontemporer.'},
+      4: {title: 'Kemeja Stylish', price:'Rp 210.000', img:'img/kemeja.jpg', desc: 'Kemeja casual, bahan adem.'}
+    };
+
+    function openProductModal(id){
+      const m = document.getElementById('productModal');
+      const c = document.getElementById('modalContent');
+      const p = PRODUCTS[id];
+      c.innerHTML = `
+        <div class="modal-grid">
+          <img src="${p.img}" alt="${p.title}">
+          <div>
+            <h2>${p.title}</h2>
+            <p class="price">${p.price}</p>
+            <p>${p.desc}</p>
+            <div class="modal-actions">
+              <button class="btn primary" onclick="alert('Tambah ke keranjang (demo)')">Tambah ke Keranjang</button>
+              <button class="btn ghost" onclick="closeModal()">Tutup</button>
+            </div>
+          </div>
+        </div>
+      `;
+      m.classList.remove('hidden');
+      document.body.classList.add('no-scroll');
+    }
+    function closeModal(){ document.getElementById('productModal').classList.add('hidden'); document.body.classList.remove('no-scroll'); }
+  </script>
+</body>
+</html>

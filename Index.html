@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - BusanaElegan</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body class="login-body">
+  <div class="login-card glass">
+    <!-- Logo -->
+    <div class="logo-row">
+      <a href="Beranda.html" class="logo-link" aria-label="BusanaElegan">
+        <img src="logo.jpg" alt="Logo BusanaElegan" class="logo-img">
+        <span class="brand">BusanaElegan</span>
+      </a>
+    </div>
+
+    <h2>Masuk ke Dashboard</h2>
+    <p class="muted">Gunakan akun demo: <strong>admin</strong> / <strong>1234</strong></p>
+
+    <form id="loginForm" onsubmit="return loginUser(event)" class="form-vertical">
+      <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="btn primary" type="submit">Masuk</button>
+    </form>
+
+    <p class="small muted">Atau buka beranda sebagai tamu <a href="Beranda.html" class="link">Lihat sebagai tamu</a></p>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
+</html>
